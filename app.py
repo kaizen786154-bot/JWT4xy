@@ -167,14 +167,15 @@ def majorlogin_jwt():
                         decoded_token = {}
 
                     result = {
-                        "account_id": decoded_token.get("account_id"),
-                        "account_name": decoded_token.get("nickname"),
-                        "open_id": open_id,
-                        "access_token": access_token,
-                        "platform": decoded_token.get("external_type"),
-                        "region": decoded_token.get("lock_region"),
-                        "status": "success",
-                        "token": token_value
+    "account_id": decoded_token.get("account_id"),
+    "account_name": decoded_token.get("nickname"),
+    "account_level": decoded_token.get("AccountLevel"),
+    "open_id": open_id,
+    "access_token": access_token,
+    "platform": decoded_token.get("external_type"),
+    "region": decoded_token.get("lock_region"),
+    "status": "success",
+    "token": token_value
                     }
                     return jsonify(result), 200
         except requests.RequestException:
